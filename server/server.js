@@ -1,10 +1,9 @@
-const { onRequest } = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
-const stripe = require("stripe")(process.env.STRIPE_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(cors({ origin: true }));
@@ -35,4 +34,11 @@ app.post("/payment/create", async (req, res) => {
   }
 });
 
-exports.api = onRequest(app);
+const HOST = process.env.HOST;
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`);
+});
+
+
