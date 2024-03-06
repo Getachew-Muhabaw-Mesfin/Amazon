@@ -99,7 +99,7 @@ const Payment = () => {
           <div>
             <div>{user?.email}</div>
             <div>123 React Lane</div>
-            <div>Ethiopia, AA</div>
+            <div>Addis Ababa,Ethiopia</div>
           </div>
         </div>
         <hr />
@@ -107,9 +107,9 @@ const Payment = () => {
         <div className={classes.flex}>
           <h3>Review items and Delivery</h3>
           <div>
-            {
-              basket?.map((item) => <ProductCard product={item} flex={true} key={item.id} />)
-            }
+            {basket?.map((item) => (
+              <ProductCard product={item} flex={true} key={item.id} />
+            ))}
           </div>
         </div>
         <hr />
@@ -120,7 +120,9 @@ const Payment = () => {
             <div className={classes.payment__details}>
               <form onSubmit={handlePayment}>
                 {/* error */}
-                {carderror && <small style={{ color: "red" }}>{carderror}</small>}
+                {carderror && (
+                  <small style={{ color: "red" }}>{carderror}</small>
+                )}
                 {/* card element */}
                 <CardElement onChange={handleChange} size={20} />
 
@@ -128,20 +130,18 @@ const Payment = () => {
                 <div className={classes.payment__price}>
                   <div>
                     <span style={{ display: "flex", gap: "10px" }}>
-                      <p>Total Order | </p>  <CurrencyFormat amount={total} />
+                      <p>Total Order | </p> <CurrencyFormat amount={total} />
                     </span>
                   </div>
-                  <button type='submit' >
-                    {
-                      processing ? (
-                        <div className={classes.loading}>
-                          <ClipLoader color='grey' size={12} />
-                          <p>Please Wait...</p>
-                        </div>
-
-                      ) : "Pay Now"
-                    }
-
+                  <button type="submit">
+                    {processing ? (
+                      <div className={classes.loading}>
+                        <ClipLoader color="grey" size={12} />
+                        <p>Please Wait...</p>
+                      </div>
+                    ) : (
+                      "Pay Now"
+                    )}
                   </button>
                 </div>
               </form>
@@ -150,7 +150,7 @@ const Payment = () => {
         </div>
       </section>
     </LayOut>
-  )
+  );
 }
 
 export default Payment;
