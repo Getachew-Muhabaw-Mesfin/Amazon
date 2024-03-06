@@ -36,7 +36,6 @@ const Cart = () => {
     <LayOut>
       <section className={classes.container} >
         <div className={classes.cart_container}>
-          <h2>Hello</h2>
           <h3>Your shopping basket</h3>
           <hr />
           {
