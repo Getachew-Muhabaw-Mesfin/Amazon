@@ -14,8 +14,6 @@ import { Type } from '../../utility/action.type';
 const Payment = () => {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   const [carderror, setCardError] = useState();
-  // console.log(carderror);
-  // console.log(user);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0)
@@ -98,7 +96,6 @@ const Payment = () => {
           <h3>Delivery Address</h3>
           <div>
             <div>{user?.email}</div>
-            <div>123 React Lane</div>
             <div>Addis Ababa,Ethiopia</div>
           </div>
         </div>

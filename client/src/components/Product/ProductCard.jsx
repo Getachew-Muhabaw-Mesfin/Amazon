@@ -45,7 +45,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
 
         {
           renderAdd && <button className={classes.button} onClick={addToCart}>
-            add to cart
+            Add to cart
           </button>
         }
 
