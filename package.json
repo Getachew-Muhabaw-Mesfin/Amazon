@@ -1,0 +1,16 @@
+{
+  "name": "amazon",
+  "version": "1.0.0",
+  "description": "Concurrently run the backend and fronted of my application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm start --prefix server\"  \"npm run dev --prefix client\" ",
+    "build": "cd server && npm install && npm run build  && cd ../client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
