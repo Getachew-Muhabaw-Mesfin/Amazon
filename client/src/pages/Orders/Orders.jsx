@@ -39,7 +39,6 @@ const Orders = () => {
               You don't have orders yet!
             </div>
           }
-          {/* Ordered items */}
           <div>
             {
               orders?.map((eachOrder, i) => {
